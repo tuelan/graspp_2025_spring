@@ -1,5 +1,8 @@
 # graspp_2025_spring
 
+- Run the code/notebooks in the cloud via Binder
+  - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Data-Science-Public-Policy/graspp_2025_spring/HEAD)
+
 - Course materials for "Data Science for Public Policy", a course at the University of Tokyo's Graduate School of Public Policy ([Graspp](https://www.pp.u-tokyo.ac.jp/en/))
   - Materials will be added shortly (1st course takes place April 7 2025)
 - Instructor: Cory Baird
