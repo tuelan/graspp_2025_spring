@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import logging
 
-
 # Get the directory of the current script (notebook in this case)
 current_script_dir = os.path.dirname(os.path.abspath(__file__))
 print(f"Current python folder : {current_script_dir}")
@@ -15,6 +14,7 @@ print(f"Folder where all our files are located (base/root folder): {root_dir}")
 data_folder = os.path.join(root_dir, "data")
 print(f"Data folder: {data_folder}")
 
+
 class SimpleFileDataProcessor:
     """
     This is a simple class to handle basic file operations.
@@ -26,7 +26,10 @@ class SimpleFileDataProcessor:
         It gets things ready when we create a SimpleFileDataProcessor.
         We set the location where our files are.
         """
+        current_script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.root_dir = os.path.dirname(os.path.dirname(current_script_dir))
         self.file_location = file_location
+        self.data_file_path = f"{self.root_dir}/{self.file_location}"
         self.data = None # We'll store our data here later
 
     def show_current_location(self):
@@ -44,8 +47,8 @@ class SimpleFileDataProcessor:
         Think of it as looking inside a box.
         """
         print("\n")
-        print(f"Looking inside this folder: {self.file_location}")
-        print(os.listdir(self.file_location))
+        print(f"Looking inside this folder: {self.data_file_path}")
+        print(os.listdir(self.data_file_path))
         print()
 
     def load_data_from_csv(self, filename="world_bank_data.csv"):
@@ -53,14 +56,11 @@ class SimpleFileDataProcessor:
         This part reads data from a CSV file (like an Excel sheet) and puts it
         into a format that Python can easily work with. We call this a 'DataFrame'.
         """
-        filepath = os.path.join(self.file_location, filename)
-        try:
-            self.data = pd.read_csv(filepath)
-            print('Look mom this function imports data to pandas')
-            print(self.data.head(5))
-        except FileNotFoundError:
-            print(f"Error: Could not find the file at {filepath}")
-            self.data = None
+        
+        self.data = pd.read_csv(f"{self.data_file_path}/{filename}")
+        print('Look mom this function imports data to pandas')
+        print(self.data.head(5))
+    
 
     def run_all_steps(self):
         """
@@ -75,7 +75,7 @@ class SimpleFileDataProcessor:
 
 # Let's create our SimpleFileDataProcessor tool
 processor = SimpleFileDataProcessor(
-        file_location="data/examples/module_1/week_1"
+        file_location=f"data/examples/module_1/"
 )
 
 # Now, let's tell it to do its job!
