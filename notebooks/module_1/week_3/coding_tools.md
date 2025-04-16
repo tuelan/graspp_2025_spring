@@ -10,7 +10,7 @@
     * A system that records changes you make to your code, allowing you to go back to previous versions and collaborate smoothly with others.
     
 
-* **uv - A Fast Python Package Manager:** [https://uv.pypi.org/](https://uv.pypi.org/)
+* **uv - A Fast Python Package Manager:** [https://docs.astral.sh/uv/getting-started/installation/](https://docs.astral.sh/uv/getting-started/installation/
     * A newer, very fast tool specifically designed to install and manage Python libraries for your data science projects more efficiently than traditional methods.
 
 
