@@ -1,5 +1,8 @@
 ## Global datasets
 
+- What: Download, manipulate and merge two or more datasets from below
+- How: Create functions in a python file to do this
+- Show: Show how to use these python files in a notebook
 
 * **Penn World Table (PWT):** Provides purchasing power parity and national income accounts data.
     * **Link:** [http://www.ggdc.net/pwt](http://www.ggdc.net/pwt)
